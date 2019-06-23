@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import TrelloList from './Components/TrelloList';
+import ListReducer from './Reducers/ListReducer';
 
 class App extends Component {
   render(){
