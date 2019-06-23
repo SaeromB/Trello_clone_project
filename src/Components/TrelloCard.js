@@ -3,10 +3,10 @@ import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 
 
-const TrelloCard=()=>{
+const TrelloCard=({text})=>{
     return (
         <Card>
-            <Typography gutterBottom>Havana</Typography>
+            <Typography gutterBottom>{text}</Typography>
         </Card>
     );
 }
