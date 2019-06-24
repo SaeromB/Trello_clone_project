@@ -15,7 +15,9 @@ const styles={
         backgroundColor:'#ccc',
         boarderRadious: 3,
         width : 300,
-        padding : 8
+        padding : 8,
+        margin: 8,
+        borderRadius: 5
     }
 }
 export default TrelloList;
