@@ -10,7 +10,7 @@ class App extends Component {
       <div className='App'>
         <h2>What is you're Plan?</h2>
           <div style={styles.ListContainer}>
-            { lists.map(lists => <TrelloList title={lists.title} cards={lists.cards}/>)}
+            { lists.map(lists => <TrelloList id={lists.id} title={lists.title} cards={lists.cards}/>)}
           </div>
       </div>
     )

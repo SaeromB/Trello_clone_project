@@ -22,7 +22,7 @@ const InitalState = [
             },
             {
                 id: 1,
-                text: ''
+                text: 'Kota Kinabalu'
             }, {
                 id: 2,
                 text: "don't know"
