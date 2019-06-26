@@ -4,27 +4,58 @@ import Icon from '@material-ui/core/Icon';
 
 class ActionButton extends Component {
 
+    state = {
+        formOpen: false
+    }
+
+    openForm=()=>{
+        this.setState ({
+            formOpen: true
+        })
+    }
+    
+
     AddButton=()=> {
         const{list} = this.props;
 
         const ButtonText = list ? 'Add another list': 'Add another Card';
+        const ButtonTextOpacity = list ? '0.5' : '1';
+        const ButtonTextColor = list ? 'white' : 'inherit';
+        const ButtonTextBg = list ? 'regba(#6b778c)' : 'inherit';
 
         return(
-            <div>
+            <div
+            onClick={this.openForm}
+            style={{
+                ...styles.OpenforButtonGroup,
+                opacity: ButtonTextOpacity,
+                Color: ButtonTextColor,
+                backgroundcolor: ButtonTextBg
+            }}>
                 <Icon>add</Icon>
-                <p>{ButtonText}</p>
+                <p>{ButtonText}</p> 
             </div>
         );
     };
 
+    renderForm=()=> {
+        return <p>Hello</p>;
+    }
+
     render(){
-        return this.AddButton();
+        return this.state.formOpen ? this.renderForm() : this.AddButton();
+    }
+}
+const styles ={
+    OpenforButtonGroup: {
+        display: 'flex',
+        alignItems: 'center',
+        curser: 'pointer',
+        boarderRadious: 3,
+        height: 36,
+        width: 272,
+        paddingLeft: 10
     }
 }
 
 export default ActionButton;
-
-// 버튼을 누르면 다른 카드를 만들수 있는 버튼을 만든다.
-// 그럼 toggle 로 만들수 있는것이 아닐까?
-
-
