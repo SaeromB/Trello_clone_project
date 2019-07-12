@@ -4,6 +4,9 @@ import Textarea from 'react-textarea-autosize';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import { flexbox } from '@material-ui/system';
+import {connect} from 'react-redux';
+import {addList} from '../Actions';
+
 
 
 
@@ -31,6 +34,16 @@ class ActionButton extends Component {
         this.setState({
             text: e.target.value
         })
+    }
+
+    handleAddList = () => {
+        const {dispatch} = this.props;
+        const {text} = this.state;
+
+        if(text){
+            dispatch(addList(text))
+        }
+        return;
     }
 
     AddButton=()=> {
@@ -81,7 +94,10 @@ class ActionButton extends Component {
                 />
             </Card>
                 <div style={styles.FormButtonGroup}>
-                    <Button variant = 'contained' style={{color: 'white', backgroundcolor: '#5aac44'}}>
+                    <Button 
+                    onMouseDown = {this.handleAddList}
+                    variant = 'contained' 
+                    style={{color: 'white', backgroundcolor: '#5aac44'}}>
                     {buttonTitle}{''}
                     </Button>
                     <Icon style={{marginLeft: 8, cursor:'pointer'}}>close</Icon>
@@ -111,4 +127,4 @@ const styles ={
     }
 }
 
-export default ActionButton;
+export default connect()(ActionButton);
