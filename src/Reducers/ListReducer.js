@@ -19,7 +19,7 @@ const InitalState = [
         ]
     },{
         title: 'Travel Plans',
-        id: 0,
+        id: 1,
         cards:[
             {
                 id: 0,
